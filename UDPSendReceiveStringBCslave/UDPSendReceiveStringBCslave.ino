@@ -11,7 +11,7 @@ IPAddress ip(192, 168, 1, 123);
 
 unsigned int localPort = 8888;       // local port to listen for UDP packets
 
-byte packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming and outgoing packets
+char packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming and outgoing packets
 
 // A UDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
