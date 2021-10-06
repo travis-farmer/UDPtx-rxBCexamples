@@ -17,7 +17,7 @@ byte packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming and outgoin
 EthernetUDP Udp;
 
 // send an NTP request to the time server at the given address
-void sendBCpacket(const char * address, char * sendBuffer, int PacketSize) {
+void sendBCpacket(char * sendBuffer, int PacketSize) {
   Udp.beginPacket(IPAddress(192, 168, 1, 255), 9999);
   Udp.write(sendBuffer, PacketSize);
   Udp.endPacket();
@@ -56,7 +56,7 @@ void setup() {
 }
 
 void loop() {
-  sendBCpacket(timeServer,"buffer", 6); // send an BC packet to the master
+  sendBCpacket("buffer", 6); // send an BC packet to the master
 
   // wait to see if a reply is available
   delay(1000);
